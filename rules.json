@@ -49,7 +49,7 @@
         }
       }
     ],
-    "dataSources": {
+   "dataSources": {
       "all_countries": "/Users/aadarsha.panta/Downloads/problem1/countries_all.txt",
       "blacklisted_countries": "/Users/aadarsha.panta/Downloads/problem1/countries_blacklisted.txt"
     },
