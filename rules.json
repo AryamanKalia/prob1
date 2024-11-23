@@ -50,11 +50,11 @@
       }
     ],
    "dataSources": {
-      "all_countries": "/Users/aadarsha.panta/Downloads/problem1/countries_all.txt",
-      "blacklisted_countries": "/Users/aadarsha.panta/Downloads/problem1/countries_blacklisted.txt"
+      "all_countries": "/home/ec2-user/problem1/countries_all.txt",
+      "blacklisted_countries": "/home/ec2-user/problem1/countries_blacklisted.txt"
     },
     "inputPath":{
-      "transactions":"/Users/aadarsha.panta/Downloads/problem1/transactions.json"
+      "transactions":"/home/ec2-user/problem1/transactions.json"
     }
   }
   
