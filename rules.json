@@ -1,0 +1,60 @@
+{
+    "rules": [
+      {
+        "id": "rule_1",
+        "description": "Check if sender or receiver country is blacklisted",
+        "enabled": true,
+        "conditions": {
+          "any": [
+            {
+              "field": "sender_address",
+              "operator": "in",
+              "value": "blacklisted_countries"
+            },
+            {
+              "field": "receiver_address",
+              "operator": "in",
+              "value": "blacklisted_countries"
+            }
+          ]
+        },
+        "action": {
+          "type": "move_to_csv",
+          "file": "flagged_transactions.csv",
+          "log_message": "Transaction flagged as blacklisted."
+        }
+      },
+      {
+        "id": "rule_2",
+        "description": "Check if sender or receiver country is not in all countries list or node missing",
+        "enabled": true,
+        "conditions": {
+          "any": [
+            {
+              "field": "sender_address",
+              "operator": "not_in",
+              "value": "all_countries"
+            },
+            {
+              "field": "receiver_address",
+              "operator": "not_in",
+              "value": "all_countries"
+            }
+          ]
+        },
+        "action": {
+          "type": "move_to_txt",
+          "file": "flagged_transaction_for_review.csv",
+          "log_message": "Transaction flagged as ignored due to unknown country."
+        }
+      }
+    ],
+    "dataSources": {
+      "all_countries": "/Users/aadarsha.panta/Downloads/problem1/countries_all.txt",
+      "blacklisted_countries": "/Users/aadarsha.panta/Downloads/problem1/countries_blacklisted.txt"
+    },
+    "inputPath":{
+      "transactions":"/Users/aadarsha.panta/Downloads/problem1/transactions.json"
+    }
+  }
+  
